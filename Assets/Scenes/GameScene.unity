@@ -180,7 +180,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 2800000, guid: 6a37071bf5b2d044dafcb05ea8f4d2cc, type: 3}
+  m_Texture: {fileID: 2800000, guid: 79f88bef6ef08eb419638ad6484f8d6d, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -496,7 +496,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -25.919678}
+  m_AnchoredPosition: {x: 0, y: -25.919708}
   m_SizeDelta: {x: -96.9166, y: -340.3349}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &686375081
@@ -668,9 +668,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 8767925ae820de941b265e68b4337927, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 990492aaa692e8748a716097d8522962, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 1
   Mute: 0
