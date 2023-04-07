@@ -347,11 +347,12 @@ public class Anekdot : MonoBehaviour
 "Поднимаю бокал за все самое лучшее и доброе! За тепло и уют в доме, за благополучие в семье, за позитив и хорошее настроение.",
 "Давайте выпьем за сказочную жизнь, за цветов красивых много и за богатство наших праздничных столов!",
 "Давайте выпьем за бизнес и секс, что по-русски означает: за успехи в делах и счастье в личной жизни!",
-"Дорогая подруга! В честь праздника торжественно клянусь: ни за что не посягну на твою новую одежду, пока ты хотя бы раз ее не наденешь. А позвонив в три часа ночи, чтобы поделиться «горячими» новостями из своей жизни, обязательно уточню, удобно ли тебе разговаривать.",
+"Дорогая подруга! В честь праздника торжественно клянусь: ни за что не посягну на твою новую одежду, пока ты хотя бы раз ее не наденешь. А позвонив в три часа ночи, чтобы поделиться «горячими» новостями из своей жизни, обязательно уточню, удобно ли тебе разговаривать."
      };
     private int randAnekdot;
     private int i = 0;
     public TextMeshProUGUI textShutka;
+    private string logPause = "Вы отдохнули от тостов? Нажмите на экран или кнопку Пробел, чтобы продолжить";
 
     private void Start()
     {
@@ -369,8 +370,18 @@ public class Anekdot : MonoBehaviour
     public void GetAnekdotText()
     {
         i = PlayerPrefs.GetInt("NumberAnekdot");
-        if (i >= shutka.Length) i = 0; 
-        textShutka.text = shutka[i];
+        if (i >= shutka.Length) i = 0;
+        if (i % 5 == 0 && i != 0)
+        {
+            textShutka.text = logPause;
+#if UNITY_WEBGL && !UNITY_EDITOR
+    	WebGLPluginJS.InterstitialFunction();
+#endif
+        }
+        else
+        {
+            textShutka.text = shutka[i];
+        }
         Debug.Log("Шутка выдана под номером" + i);
         i++;
         PlayerPrefs.SetInt("NumberAnekdot", i);
